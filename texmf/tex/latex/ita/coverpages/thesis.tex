@@ -1,0 +1,51 @@
+\ProvidesFile{thesis.tex}
+
+\renewcommand\maketitle{%
+    \begin{titlepage}%    
+        {\noindent\large\titletext\par}
+        \vfill\par
+        \begin{center}
+            {\bf
+                {\large\@author\par}
+                \vfill\par               
+                \Large\begin{doublespace}
+                    \MakeUppercase{\@title}
+                \end{doublespace}
+                \vfill\par
+            }\par
+            \aprovedtext\par
+            \vfill\par 
+            {\large         
+            \sub@line
+            \location\\
+            \city, \uf{} - \country\\
+            \date@year
+            }
+        \end{center}
+        \end{titlepage}
+}
+
+\newcommand{\makecommittee}{%     
+\begin{titlepage}
+        \begin{center}
+            {\bf
+            \begin{doublespace}
+                \MakeUppercase{\Large\@title}
+            \end{doublespace}
+            \vfill\par
+            {\large\@author\par}
+            \vfill\par               
+            }            
+        \end{center}
+        \committeetext:\par
+        \begin{flushleft}%
+            \begin{membs}%
+                \begin{tabular*}{\textwidth}{@{\extracolsep{0pt}}l@{\extracolsep{\fill}}c@{\extracolsep{0pt}}lcr}
+                    \memb@line
+                \end{tabular*}
+            \end{membs}
+        \end{flushleft}         
+        \vfill\par
+        \centering\large\textbf{ITA}
+    \end{titlepage}
+}

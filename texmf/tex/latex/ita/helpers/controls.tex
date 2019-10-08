@@ -1,0 +1,37 @@
+\ProvidesFile{controls.tex}
+
+\newif\if@frontmatter
+\renewcommand{\frontmatter}{%
+    \cleardoublepage
+    \@mainmatterfalse
+    \pagenumbering{Roman}%
+}
+
+\newif\if@appendix \@appendixfalse
+\renewcommand{\appendix}{\par
+    \@appendixtrue
+    \@mainmatterfalse
+    \setcounter{chapter}{0}%
+    \setcounter{section}{0}%
+    \gdef\@chapapp{\appendixname}%
+    \gdef\thechapter{\@Alph\c@chapter}%
+}
+
+\newcommand{\annex}{\par
+    \@appendixtrue
+    \@mainmatterfalse
+    \setcounter{chapter}{0}%
+    \setcounter{section}{0}%
+    \gdef\@chapapp{\annexname}%
+    \gdef\thechapter{\@Alph\c@chapter}%
+}
+
+\renewcommand{\backmatter}{%
+    \if@openright
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+    \@mainmatterfalse
+    \@appendixfalse
+}

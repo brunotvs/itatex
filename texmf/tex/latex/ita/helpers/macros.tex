@@ -1,0 +1,28 @@
+\ProvidesFile{macros.tex}
+
+% Function to extract the last word of a sentence
+% As given by egreg at: https://tex.stackexchange.com/a/236213/193099
+\newcommand{\TheLastWord}[1]{\expandafter\@TheLastWord\expandafter{#1}}
+\protected\def\@TheLastWord#1{\@thelast{}#1 \relax} 
+\def\@thelast#1#2 #3{%
+\ifx\relax#3%
+#2%
+\expandafter\@xthree
+\fi
+\@thelast{#1 #2}#3}
+
+\newcommand{\RemoveTheLastWord}[1]{\expandafter\@RemoveTheLastWord\expandafter{#1}}
+\protected\def\@RemoveTheLastWord#1{\@removelast{}#1 \relax} 
+\def\@removelast#1#2 #3{%
+\ifx\relax#3%
+\hspace{-\@spacelength}#1%
+\expandafter\@xthree
+\fi
+\@removelast{#1 #2}#3}
+
+\newcommand{\@rspace}{\hspace{-\@spacelength}}
+
+\def\@xthree#1#2#3{}
+
+\newlength\@spacelength
+\settowidth{\@spacelength}{ }

@@ -1,0 +1,124 @@
+\ProvidesFile{sections.tex}
+
+\def\numberline#1{#1~}
+
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+        \if@appendix
+            \refstepcounter{chapter}%
+            \typeout{\thechapter.}%
+            \addcontentsline{toc}{chapter}%
+            {\protect\numberline{\@chapapp{} \thechapter~-}#1}%
+        \else
+            \if@mainmatter
+                \refstepcounter{chapter}%
+                \typeout{\thechapter.}%
+                \addcontentsline{toc}{chapter}%
+                {\protect\numberline{\thechapter}#1}%
+            \else
+                \addcontentsline{toc}{chapter}{#1}%
+            \fi
+        \fi
+    \else
+        \addcontentsline{toc}{chapter}{#1}%
+    \fi
+    \chaptermark{#1}%
+    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+    \if@twocolumn
+        \@topnewpage[\@makechapterhead{#2}]%
+    \else
+        \@makechapterhead{#2}%
+        \@afterheading
+    \fi
+}
+
+\def\@makechapterhead#1{%
+    \if@mainmatter
+        {\parindent \z@ \raggedright \normalfont
+        \interlinepenalty\@M
+        \Large \bfseries \thechapter~~#1\par\nobreak
+        \vskip 2ex\@minus\parskip
+        }
+    \else
+        \if@appendix
+            {\parindent \z@ \raggedright \normalfont
+            \interlinepenalty\@M
+            \Large \bfseries \@chapapp{} \thechapter\space-\space#1\par\nobreak
+            \vskip 2ex\@minus\parskip
+            }
+        \else
+            {\centering%
+            \interlinepenalty\@M
+            \Large \bfseries #1\par\nobreak
+            \vskip 2ex\@minus\parskip
+            }
+        \fi
+    \fi
+
+}
+
+\def\@makeschapterhead#1{%
+    \if@mainmatter
+        {\parindent \z@ \raggedright \normalfont
+        \interlinepenalty\@M
+        \Large \bfseries #1\par\nobreak
+        \vskip 2ex\@minus\parskip
+        }
+    \else
+        {\centering%
+        \interlinepenalty\@M
+        \Large \bfseries #1\par\nobreak
+        \vskip 2ex\@minus\parskip
+        }
+    \fi
+}
+
+\renewcommand*\l@chapter[2]{%
+    \vskip 2ex \@plus\p@ \@minus\parskip
+    \@dottedtocline{0}{0em}{1.8em}{\normalfont\bf\large{#1}}{\normalfont\bf\large#2}
+}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
+    {\normalfont\large\bfseries}%
+}
+
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
+    {\normalfont\normalsize\bfseries}%
+}
+
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
+    {\normalfont\normalsize\bfseries}%
+}
+
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
+    {\normalfont\normalsize\bfseries}%
+}
+
+\renewcommand\subparagraph{\@startsection{subparagraph}{5}{\parindent}%
+    {3.25ex \@plus1ex \@minus .2ex}%
+    {-1em}%
+    {\normalfont\normalsize\bfseries}%
+}
+
+\renewcommand\tableofcontents{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\contentsname
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+           \vskip -1ex \@plus\parskip
+    \@starttoc{toc}%
+    \addtocontents{toc}{\protect\setlength{\parskip}{0pt}}%
+    \if@restonecol\twocolumn\fi
+}
