@@ -228,7 +228,7 @@
             \csname author\Roman{\@i}@name\endcsname\par%
             \csname @adress\Roman{\@i}\endcsname\par%
         \end{minipage}%
-        \ifthenelse{\isodd{\value{\@i}}}{\hfill}{\par\vspace{1.5cm}\par}%
+        \ifthenelse{\isodd{\value{\@i}}}{\hfill}{\par\vfill\par}%
     }%  
 }
 
@@ -424,5 +424,6 @@
     \RequirePackage{datetime2}
     \DTMsetup{useregional}
     \newcommand{\my@date}{\DTMdate{\@date}}
+    \DTMsavedate{mydate}{\@date}
     \newcommand{\date@year}{\DTMfetchyear{mydate}}
 }
