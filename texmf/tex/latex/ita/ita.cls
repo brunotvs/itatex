@@ -27,13 +27,6 @@
 %% version 2005/12/01 or later.
 %%
 %% This work has the LPPL maintenance status `maintained'.
-%% 
-%% The Current Maintainer of this work is the abnTeX2 team, led
-%% by Lauro César Araujo. Further information are available on 
-%% https://www.abntex.net.br/
-%%
-%% Creator and original mantainer: Gerald Weber <gweber@codigolivre.org.br>
-%% Copyright 2001-2002 by the abnTeX group at http://abntex.codigolivre.org.br
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ita}[2019/10/07 ITA class for scientific documents]
