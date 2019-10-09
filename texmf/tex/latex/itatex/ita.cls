@@ -198,20 +198,20 @@
 }
 
 
-\newcommand{\adress}[1]{%
-    \renewcommand{\@adress}{#1}%
+\newcommand{\address}[1]{%
+    \renewcommand{\@address}{#1}%
     \@addadres{#1}
 }
 
-\newcommand{\@adress}{\@empty}
+\newcommand{\@address}{\@empty}
 
-\newcounter{c@adress} \setcounter{c@adress}{0}
+\newcounter{c@address} \setcounter{c@address}{0}
 \newcommand{\@addadres}[1]{%
-    \stepcounter{c@adress}%
-    \expandafter\def\csname @adress\Roman{c@adress}\endcsname{#1}%
+    \stepcounter{c@address}%
+    \expandafter\def\csname @address\Roman{c@address}\endcsname{#1}%
 }
 
-\newcommand{\author@adress}{%
+\newcommand{\author@address}{%
     \setcounter{\@i}{0}%
     \newcounter{@temp} \setcounter{@temp}{\value{c@author}}
     \whiledo{\value{\@i}<\value{@temp}}{%
@@ -219,7 +219,7 @@
         \noindent\begin{minipage}{.5\textwidth}
             \rule{6cm}{.1pt}\par%
             \csname author\Roman{\@i}@name\endcsname\par%
-            \csname @adress\Roman{\@i}\endcsname\par%
+            \csname @address\Roman{\@i}\endcsname\par%
         \end{minipage}%
         \ifthenelse{\isodd{\value{\@i}}}{\hfill}{\par\vfill\par}%
     }%  
