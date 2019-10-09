@@ -79,25 +79,25 @@
 }
 
 \renewcommand\section{\@startsection {section}{1}{\z@}%
-    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
     {\p@ \@plus \baselineskip \@minus \parskip}%
     {\normalfont\large\bfseries}%
 }
 
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
     {\p@ \@plus \baselineskip \@minus \parskip}%
     {\normalfont\normalsize\bfseries}%
 }
 
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
     {\p@ \@plus \baselineskip \@minus \parskip}%
     {\normalfont\normalsize\bfseries}%
 }
 
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-    {\p@}%
+    {\p@ \@plus \baselineskip \@minus \parskip}%
     {\p@ \@plus \baselineskip \@minus \parskip}%
     {\normalfont\normalsize\bfseries}%
 }
@@ -120,5 +120,32 @@
            \vskip -1ex \@plus\parskip
     \@starttoc{toc}%
     \addtocontents{toc}{\protect\setlength{\parskip}{0pt}}%
+    \if@restonecol\twocolumn\fi
+}
+
+\renewcommand\listoffigures{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listfigurename}%
+      \@mkboth{\MakeUppercase\listfigurename}%
+              {\MakeUppercase\listfigurename}%
+    \@starttoc{lof}\addtocontents{lof}{\protect\setlength{\parskip}{0pt}}%%
+    \if@restonecol\twocolumn\fi
+    }
+
+\renewcommand\listoftables{%
+    \if@twocolumn
+      \@restonecoltrue\onecolumn
+    \else
+      \@restonecolfalse
+    \fi
+    \chapter*{\listtablename}%
+      \@mkboth{%
+          \MakeUppercase\listtablename}%
+         {\MakeUppercase\listtablename}%
+    \@starttoc{lot}\addtocontents{lot}{\protect\setlength{\parskip}{0pt}}%%
     \if@restonecol\twocolumn\fi
 }

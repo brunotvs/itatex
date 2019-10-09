@@ -96,3 +96,18 @@
     {\@latex@warning{Empty `thebibliography' environment}}%
     \endlist%
 }
+
+\renewenvironment{quotation}{%
+    \footnotesize\begin{spacing}{1}\list{}{%
+        \leftmargin 4cm
+        \parsep        \z@ \@plus\p@}%
+        \item\relax%
+}{%
+    \endlist\end{spacing}%
+}
+\renewenvironment{quote}{%
+    \list{}{\rightmargin\leftmargin}%
+    \item\relax%
+}{%
+    \endlist%
+}

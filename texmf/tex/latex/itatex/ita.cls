@@ -119,7 +119,7 @@
 \setlength\headsep{15mm-\headheight}
 \setlength\topmargin{3cm-1in-\headheight-\headsep}
 \setlength{\parindent}{3.5em}
-\setlength{\parskip}{\baselineskip}
+\setlength{\parskip}{1ex}
 
 \newcommand{\workarea}[1]{%
     \renewcommand{\@workarea}{#1}
