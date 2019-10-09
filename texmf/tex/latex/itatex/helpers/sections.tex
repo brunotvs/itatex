@@ -149,3 +149,20 @@
     \@starttoc{lot}\addtocontents{lot}{\protect\setlength{\parskip}{0pt}}%%
     \if@restonecol\twocolumn\fi
 }
+
+% Add Figure/Table: to lof or lot
+% https://tex.stackexchange.com/a/42049
+% Redefining the \@caption command instead of using 
+% patchcmd
+\long\def\@caption#1[#2]#3{%
+    \par
+    \addcontentsline{\csname ext@#1\endcsname}{#1}%
+        {\protect\numberline{\csname fnum@#1\endcsname:}{\ignorespaces #2}}%
+    \begingroup
+        \@parboxrestore
+        \if@minipage
+            \@setminipage
+        \fi
+        \normalsize
+        \@makecaption{\csname fnum@#1\endcsname}{\ignorespaces #3}\par
+  \endgroup}
