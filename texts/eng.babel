@@ -1,7 +1,4 @@
 \ProvidesFile{eng.babel}
-\renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
-\renewcommand{\@workcourse}{Course}
-\renewcommand{\@workarea}{Field}
 \addto\captionsenglish{%
 
 \ifthenelse{\equal{\DocumentType}{tg}}%
