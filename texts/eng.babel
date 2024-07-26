@@ -123,8 +123,8 @@
 	Mester's Course in \@workcourse.%
 }
 \renewcommand{\aprovedtext}{%
-	\worklevel{} approved in its final version the signatories
-	below:%
+	\worklevel{} approved in its final version by the
+    signatories below:%
 }
 \renewcommand{\location}{Campo Montenegro}
 \renewcommand{\city}{S\~{a}o Jos\'{e} dos Campos}
