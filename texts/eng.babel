@@ -1,218 +1,297 @@
 \ProvidesFile{eng.babel}
+\renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
 \addto\captionsenglish{%
+
 \ifthenelse{\equal{\DocumentType}{tg}}%
 {%
-    \ifthenelse{\equal{\AuthorGender}{male}}
-    {%
-        \renewcommand{\authortitle}{Engenheiro}%
-    }{}
-    \ifthenelse{\equal{\AuthorGender}{female}}%
-    {%
-        \renewcommand{\authortitle}{Engenheira}%
-    }{}
-    \renewcommand{\course}{Gradua{\c{c}}{\~a}o}
-    \renewcommand{\worklevel}{Trabalho}
-    \renewcommand{\titletext}{\tgtitletext}
+	\ifthenelse{\equal{\AuthorGender}{male}}
+	{%
+		\renewcommand{\authortitle}{Engenheiro}%
+	}{}
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\renewcommand{\authortitle}{Engenheira}%
+	}{}
+	\renewcommand{\course}{Gradua{\c{c}}{\~a}o}
+	\renewcommand{\worklevel}{Trabalho}
+	\renewcommand{\titletext}{\tgtitletext}
 }{}
 \ifthenelse{\equal{\DocumentType}{msc}}%
 {%
-    \ifthenelse{\equal{\AuthorGender}{male}}%
-    {%
-        \renewcommand{\authortitle}{Mestre}%
-    }{}
-    \ifthenelse{\equal{\AuthorGender}{female}}%
-    {%
-        \renewcommand{\authortitle}{Mestra}%
-    }{}
-    \renewcommand{\course}{Mestrado}
-    \renewcommand{\worklevel}{Disserta{\c{c}}{\~a}o}
-    \renewcommand{\titletext}{\latotitletext}
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\renewcommand{\authortitle}{Master}%
+	}{}
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\renewcommand{\authortitle}{Master}%
+	}{}
+	\renewcommand{\course}{Master of Science}
+	\renewcommand{\worklevel}{Dissertation}
+	\renewcommand{\titletext}{\latotitletext}
 }{}
 \ifthenelse{\equal{\DocumentType}{dsc}}%
 {%
-    \ifthenelse{\equal{\AuthorGender}{male}}%
-    {%
-        \renewcommand{\authortitle}{Doutor}%
-    }{}
-    \ifthenelse{\equal{\AuthorGender}{female}}%
-    {%
-        \renewcommand{\authortitle}{Doutora}%
-    }{}
-    \renewcommand{\course}{Doutorado}
-    \renewcommand{\worklevel}{Tese}
-    \renewcommand{\titletext}{\latotitletext}
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\renewcommand{\authortitle}{Doctor}%
+	}{}
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\renewcommand{\authortitle}{Doctor}%
+	}{}
+	\renewcommand{\course}{Doctor of Science}
+	\renewcommand{\worklevel}{Thesis}
+	\renewcommand{\titletext}{\latotitletext}
 }{}
+\ifthenelse{\equal{\DocumentType}{quali}}%
+{%
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\newcommand{\authortitle}{Doctor}%
+	}{}
+
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\newcommand{\authortitle}{Doctor}%
+	}{}
+
+	\newcommand{\course}{Doctor of Science}
+	\newcommand{\worklevel}{Monography}
+
+	\newcommand{\titletext}{\latotitletext}
+}{}
+
 \ifthenelse{\equal{\DocumentType}{msp}}%
 {%
-    \ifthenelse{\equal{\AuthorGender}{male}}%
-    {%
-        \renewcommand{\authortitle}{Mestre}%
-    }{}
-    \ifthenelse{\equal{\AuthorGender}{female}}%
-    {%
-        \renewcommand{\authortitle}{Mestra}%
-    }{}
-    \renewcommand{\course}{Mestrado}
-    \renewcommand{\worklevel}{Disserta{\c{c}}{\~a}o}
-    \renewcommand{\titletext}{\strictotitletext}
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\renewcommand{\authortitle}{Master}%
+	}{}
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\renewcommand{\authortitle}{Master}%
+	}{}
+	\renewcommand{\course}{Master of Engineering}
+	\renewcommand{\worklevel}{Dissertation}
+	\renewcommand{\titletext}{\strictotitletext}
 }{}
 \renewcommand{\a@o}{\empty}
 \renewcommand{\defa@o}{%
-    \ifthenelse{\equal{\AuthorGender}{male}}%
-    {%
-        \ifthenelse{\equal{\thec@author}{1}}
-        {%
-            \renewcommand{\a@o}{\a@o@m@s}%
-        }{%
-            \renewcommand{\a@o}{\a@o@m@p}%
-        }
-    }{%
-        \ifthenelse{\equal{\thec@author}{1}}
-        {%
-            \renewcommand{\a@o}{\a@o@f@s}%
-        }{%
-            \renewcommand{\a@o}{\a@o@f@p}%
-        }
-    }
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\ifthenelse{\equal{\thec@author}{1}}
+		{%
+			\renewcommand{\a@o}{\a@o@m@s}%
+		}{%
+			\renewcommand{\a@o}{\a@o@m@p}%
+		}
+	}{%
+		\ifthenelse{\equal{\thec@author}{1}}
+		{%
+			\renewcommand{\a@o}{\a@o@f@s}%
+		}{%
+			\renewcommand{\a@o}{\a@o@f@p}%
+		}
+	}
 }
-\renewcommand{\author@m@s}{autor}
-\renewcommand{\author@m@p}{autores}
-\renewcommand{\author@f@s}{autora}
-\renewcommand{\author@f@p}{autoras}
+\renewcommand{\author@m@s}{author}
+\renewcommand{\author@m@p}{authors}
+\renewcommand{\author@f@s}{author}
+\renewcommand{\author@f@p}{authors}
 \renewcommand{\a@o@m@s}{o}
 \renewcommand{\a@o@m@p}{os}
 \renewcommand{\a@o@f@s}{a}
 \renewcommand{\a@o@f@p}{as}
 \renewcommand{\tgtitletext}{%
-    \worklevel{} de \course%
+	\worklevel{} de \course%
 }
 \renewcommand{\tgcoursetext}{%
-    Curso de \@workcourse%
+	Curso de \@workcourse%
 }
 \renewcommand{\latotitletext}{%
-    \worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de
-    P{\'o}s-Gradua{\c{c}}{\~a}o do Instituto
-    Tecnol{\'o}gico de Aeron{\'a}utica, como parte dos
-    requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de
-    \authortitle{} em Ci{\^e}ncias no Programa de
-    P{\'o}s-Gradua{\c{c}}{\~a}o em \@workcourse, \@workarea.%
+	\worklevel{} presented to the Instituto
+	Tecnol{\'o}gico de Aeron{\'a}utica, in partial
+	fulfillment of the requirements for the degree of
+	\authortitle{} of Science in the Program of
+	\@workcourse, Field \@workarea.%
 }
 \renewcommand{\strictotitletext}{%
-    \worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de
-    P{\'o}s-Gradua{\c{c}}{\~a}o do Instituto
-    Tecnol{\'o}gico de Aeron{\'a}utica, como parte dos
-    requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de
-    \authortitle{} em Engenharia do Curso de Mestrado
-    Profissional em \@workcourse.%
+	\worklevel{} presented to the Instituto
+	Tecnol{\'o}gico de Aeron{\'a}utica, in partial
+	fulfillment of the requirements for the degree of
+	\authortitle{} of Engineering of the Professional
+	Mester's Course in \@workcourse.%
 }
-\renewcommand{\@workcourse}{Curso}
-\renewcommand{\@workarea}{{\'A}rea}
+\renewcommand{\@workcourse}{Course}
+\renewcommand{\@workarea}{Field}
 \renewcommand{\aprovedtext}{%
-    \worklevel{} aprovada em sua vers\~{a}o final pelos 
-    abaixo assinados:%
+	\worklevel{} approved in its final version the signatories
+	below:%
 }
 \renewcommand{\location}{Campo Montenegro}
 \renewcommand{\city}{S\~{a}o Jos\'{e} dos Campos}
 \renewcommand{\uf}{SP}
-\renewcommand{\country}{Brasil}
+\renewcommand{\country}{Brazil}
 \renewcommand{\@female}{\@empty}
 \renewcommand{\@male}{\@empty}
 \renewcommand{\prof@female}{%
-    Prof\ensuremath{^\textnormal{a}}.%
+	Prof.%
 }
 \renewcommand{\prof@male}{%
-    Prof.%
+	Prof.%
 }
 \renewcommand{\dr@female}{%
-    Dr\ensuremath{^\textnormal{a}}.%
+	Dr.%
 }
 \renewcommand{\dr@male}{%
-    Dr.%
+	Dr.%
 }
 \renewcommand{\adv@female}{%
-    Orientadora%
+	Advisor%
 }
 \renewcommand{\adv@male}{%
-    Orientador%
+	Advisor%
 }
 \renewcommand{\coadv@female}{%
-    Co-orientadora%
+	Co-advisor%
 }
 \renewcommand{\coadv@male}{%
-    Co-orientador%
+	Co-advisor%
 }
 \renewcommand{\pres@female}{%
-    Presidente%
+	Chairperson%
 }
 \renewcommand{\pres@male}{%
-    \pres@f%
+	\pres@f%
 }
 \renewcommand{\@advname}{%
-    \ifthenelse{\value{c@adv}=1}%
-    {%
-        Orientador%
-    }{%
-        Orientadores%
-    }%    
+	\ifthenelse{\value{c@adv}=1}%
+	{%
+		Orientador%
+	}{%
+		Orientadores%
+	}%    
 }
 \renewcommand{\@coadvname}{%
-    \ifthenelse{\value{c@coadv}=1}%
-    {%
-        Co-orientador%
-    }{%
-        Co-orientadores%
-    }% 
+	\ifthenelse{\value{c@coadv}=1}%
+	{%
+		Co-orientador%
+	}{%
+		Co-orientadores%
+	}% 
 }
 \renewcommand{\rec@female}{%
-    Pr{\'o}-Reitora de P{\'o}s-Gradua{\c{c}}{\~a}o%
+	Pro-Rector of Graduate Courses%
 }
 \renewcommand{\rec@male}{%
-    Pr{\'o}-Reitor de P{\'o}s-Gradua{\c{c}}{\~a}o%
+	Pro-Rector of Graduate Courses%
 }
 \renewcommand{\coor@female}{%
-    Coordenadora do Curso \@workcourse%
+	Coordenadora do Curso \@workcourse%
 }
 \renewcommand{\coor@male}{%
-    Coordenador do Curso \@workcourse%
+	Coordenador do Curso \@workcourse%
 }
+
+
+
+\ifthenelse{\equal{\DocumentType}{tg}}%
+{%
+
 \renewcommand{\ciphead}{%
-    Dados Internacionais de Cataloga{\c{c}}{\~a} na
-    Publi{\c{c}}{\~a}o (CIP)\\
-    Divis{\~a}o de Informa{\c{c}}{\~a}o e Documenta{\c{c}}{\~a}o
+	Dados Internacionais de Cataloga{\c{c}}{\~a} na
+	Publi{\c{c}}{\~a}o (CIP)\\
+	Divis{\~a}o de Informa{\c{c}}{\~a}o e Documenta{\c{c}}{\~a}o
 }
+
 \renewcommand{\cipbibname}{%
-    Refer{\^e}ncia bibliogr{\'a}fica%
+	Refer{\^e}ncia bibliogr{\'a}fica%
 }
+
 \renewcommand{\ciprightsname}{%
-   Cess{\~a}o de direitos% 
+	Cess{\~a}o de direitos% 
 }
+
 \renewcommand{\ciprights}{%
-    \footnotesize{NOME D\MakeUppercase{\a@o} \MakeUppercase{\author@a}: }\normalsize\@authors.\\
-    \footnotesize{T{\'I}TULO DO TRABALHO: }\normalsize\@title\\
-    \footnotesize{TIPO DO TRABALHO/ANO: }\normalsize\worklevel{}/\date@year\\
-    \vspace{2ex}\\
-    \noindent{\'E} cedida ao \ITA{} permiss{\~a}o para reproduzir c{\'o}pias desta
-    \worklevel{} e para emprestar e vender c{\'o}pias somente para prop{\'o}sios
-    acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} reserva\ifthenelse{%
-    \value{c@author}>1}{m}{} outros direitos de publica{\c{c}}{\~a}o e nenhuma parte dest\ifx \DocumentType{tg}{e}\else{a}\fi{}
-    \worklevel{} pode ser reproduzida sem a sua autoriza{\c{c}}{\~a}o (d\a@o{} \author@a{}).
+\footnotesize{NOME D\MakeUppercase{\a@o} \MakeUppercase{\author@a}: }\normalsize\@authors.\\
+\footnotesize{T{\'I}TULO DO TRABALHO: }\normalsize\@title\\
+\footnotesize{TIPO DO TRABALHO/ANO: }\normalsize\worklevel{}/\date@year\\
+\vspace{2ex}\\
+\noindent{\'E} cedida ao \ITA{} permiss{\~a}o para reproduzir c{\'o}pias desta
+\worklevel{} e para emprestar e vender c{\'o}pias somente para prop{\'o}sios
+acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} reserva\ifthenelse{%
+	\value{c@author}>1}{m}{} outros direitos de publica{\c{c}}{\~a}o e nenhuma parte dest\ifx \DocumentType{tg}{e}\else{a}\fi{}
+\worklevel{} pode ser reproduzida sem a sua autoriza{\c{c}}{\~a}o (d\a@o{} \author@a{}).
 }
+
 \renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
+
 \renewcommand{\ciptext}{%
-    \worklevel{} de \course{} - Curso de \@workcourse.
-    {\'A}rea de \@workarea{} - \ITA, \date@year.
-    \@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
+\worklevel{} de \course{} - Curso de \@workcourse.
+{\'A}rea de \@workarea{} - \ITA, \date@year.
+\@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
 }
+
 \renewcommand{\cipref}{%
-    \authors@ref. \textbf{\@title}.
-    \date@year. \pageref{LastPage}f. \worklevel{} de \course{} em 
-    \@workarea{} - \ITA, \city.
+	\authors@ref. \textbf{\@title}.
+	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
+	\@workarea{} - \ITA, \city.
 }
+
 \renewcommand{\ciptitle}{%
-    T{\'i}tulo%
+	T{\'i}tulo%
 }
+
 \renewcommand{\committeetext}{%
-    Composi{\c{c}}{\~a}o da Banca Examinadora%
+	Composi{\c{c}}{\~a}o da Banca Examinadora%
 }
-\renewcommand{\annexname}{Anexo}
+
+} {
+\renewcommand{\ciphead}{%
+	Cataloging-in-Publication Data\\
+	Documentation and Information Division
+}
+
+\renewcommand{\cipbibname}{%
+	Bibliographic Reference%
+}
+
+\renewcommand{\ciprightsname}{%
+	Cession of Rights%
+}
+
+\renewcommand{\ciprights}{%
+	\footnotesize{AUTHOR NAME: }\normalsize\@authors.\\
+	\footnotesize{PUBLICATION TITLE: }\normalsize\@title\\
+	\footnotesize{PUBLICATION KIND/YEAR: }\normalsize\worklevel{}/\date@year\\
+	\vspace{2ex}\\
+	\noindent It is granted to \ITA{} permission to reproduce copies of this
+	\worklevel{} to only loan or sell copies for academic and scietific purposes.
+	The author reserves other publication rights and no part of this \worklevel{} can be reproduced
+	without his authorization.
+}
+
+\renewcommand{\ciptext}{%
+\worklevel{} de \course{} - Curso de \@workcourse.
+{\'A}rea de \@workarea{} - \ITA, \date@year.
+\@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
+}
+
+\renewcommand{\cipref}{%
+	\authors@ref. \textbf{\@title}.
+	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
+	\@workarea{} - \ITA, \city.
+}
+
+\renewcommand{\ciptitle}{%
+	Title%
+}
+
+\renewcommand{\committeetext}{%
+	Thesis Committee Composition%
+}
+
+}
+\renewcommand{\annexname}{Annex}
 }
