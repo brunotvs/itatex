@@ -1,5 +1,7 @@
 \ProvidesFile{eng.babel}
 \renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
+\renewcommand{\@workcourse}{Course}
+\renewcommand{\@workarea}{Field}
 \addto\captionsenglish{%
 
 \ifthenelse{\equal{\DocumentType}{tg}}%
@@ -123,8 +125,6 @@
 	\authortitle{} of Engineering of the Professional
 	Mester's Course in \@workcourse.%
 }
-\renewcommand{\@workcourse}{Course}
-\renewcommand{\@workarea}{Field}
 \renewcommand{\aprovedtext}{%
 	\worklevel{} approved in its final version the signatories
 	below:%
