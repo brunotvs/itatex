@@ -47,18 +47,18 @@
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}%
 	{%
-		\newcommand{\authortitle}{Doctor}%
+		\renewcommand{\authortitle}{Doctor}%
 	}{}
 
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
-		\newcommand{\authortitle}{Doctor}%
+		\renewcommand{\authortitle}{Doctor}%
 	}{}
 
-	\newcommand{\course}{Doctor of Science}
-	\newcommand{\worklevel}{Monography}
+	\renewcommand{\course}{Doctor of Science}
+	\renewcommand{\worklevel}{Monography}
 
-	\newcommand{\titletext}{\latotitletext}
+	\renewcommand{\titletext}{\latotitletext}
 }{}
 
 \ifthenelse{\equal{\DocumentType}{msp}}%
