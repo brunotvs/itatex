@@ -107,18 +107,22 @@
 
 \onehalfspacing
 
-\setlength\oddsidemargin{3cm-1in}%
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\headsep{3mm}
+
+\setlength\oddsidemargin{3cm}%
 \ifthenelse{\boolean{@twoside}}{%
-	\setlength\evensidemargin{2cm-1in}%
+	\setlength\evensidemargin{2cm}%
 
 }{%
-	\setlength\evensidemargin{3cm-1in}%
+	\setlength\evensidemargin{3cm}%
 }
 
 \setlength\textwidth{16cm}
-\setlength\textheight{247mm}
-\setlength\headsep{15mm-\headheight}
-\setlength\topmargin{3cm-1in-\headheight-\headsep}
+\setlength\textheight{250mm-0.5\headsep}
+\setlength\headheight{3cm-0.5\headsep}
+\setlength\topmargin{\headheight-3cm}
 \setlength{\parindent}{3.5em}
 \setlength{\parskip}{1ex}
 
