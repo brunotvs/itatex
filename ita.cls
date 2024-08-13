@@ -109,6 +109,7 @@
 
 \setlength\voffset{-1in}
 \setlength\hoffset{-1in}
+\setlength\topmargin{0mm}
 \setlength\headsep{3mm}
 
 \setlength\oddsidemargin{3cm}%
@@ -122,7 +123,6 @@
 \setlength\textwidth{16cm}
 \setlength\textheight{250mm-0.5\headsep}
 \setlength\headheight{3cm-0.5\headsep}
-\setlength\topmargin{\headheight-3cm}
 \setlength{\parindent}{3.5em}
 \setlength{\parskip}{1ex}
 
