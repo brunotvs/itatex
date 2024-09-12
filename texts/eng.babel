@@ -1,6 +1,5 @@
 \ProvidesFile{eng.babel}
 \addto\captionsenglish{%
-
 \ifthenelse{\equal{\DocumentType}{tg}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}
@@ -49,18 +48,14 @@
 	{%
 		\renewcommand{\authortitle}{Doctor}%
 	}{}
-
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
 		\renewcommand{\authortitle}{Doctor}%
 	}{}
-
 	\renewcommand{\course}{Doctor of Science}
 	\renewcommand{\worklevel}{Monography}
-
 	\renewcommand{\titletext}{\latotitletext}
 }{}
-
 \ifthenelse{\equal{\DocumentType}{msp}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}%
@@ -124,7 +119,7 @@
 }
 \renewcommand{\aprovedtext}{%
 	\worklevel{} approved in its final version by the
-    signatories below:%
+	signatories below:%
 }
 \renewcommand{\location}{Campo Montenegro}
 \renewcommand{\city}{S\~{a}o Jos\'{e} dos Campos}
@@ -190,26 +185,19 @@
 \renewcommand{\coor@male}{%
 	Coordenador do Curso \@workcourse%
 }
-
-
-
 \ifthenelse{\equal{\DocumentType}{tg}}%
 {%
-
 \renewcommand{\ciphead}{%
 	Dados Internacionais de Cataloga{\c{c}}{\~a} na
 	Publi{\c{c}}{\~a}o (CIP)\\
 	Divis{\~a}o de Informa{\c{c}}{\~a}o e Documenta{\c{c}}{\~a}o
 }
-
 \renewcommand{\cipbibname}{%
 	Refer{\^e}ncia bibliogr{\'a}fica%
 }
-
 \renewcommand{\ciprightsname}{%
 	Cess{\~a}o de direitos% 
 }
-
 \renewcommand{\ciprights}{%
 \footnotesize{NOME D\MakeUppercase{\a@o} \MakeUppercase{\author@a}: }\normalsize\@authors.\\
 \footnotesize{T{\'I}TULO DO TRABALHO: }\normalsize\@title\\
@@ -221,43 +209,34 @@ acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} r
 	\value{c@author}>1}{m}{} outros direitos de publica{\c{c}}{\~a}o e nenhuma parte dest\ifx \DocumentType{tg}{e}\else{a}\fi{}
 \worklevel{} pode ser reproduzida sem a sua autoriza{\c{c}}{\~a}o (d\a@o{} \author@a{}).
 }
-
 \renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
-
 \renewcommand{\ciptext}{%
 \worklevel{} de \course{} - Curso de \@workcourse.
 {\'A}rea de \@workarea{} - \ITA, \date@year.
 \@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
 }
-
 \renewcommand{\cipref}{%
 	\authors@ref. \textbf{\@title}.
 	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
 	\@workarea{} - \ITA, \city.
 }
-
 \renewcommand{\ciptitle}{%
 	T{\'i}tulo%
 }
-
 \renewcommand{\committeetext}{%
 	Composi{\c{c}}{\~a}o da Banca Examinadora%
 }
-
 } {
 \renewcommand{\ciphead}{%
 	Cataloging-in-Publication Data\\
 	Documentation and Information Division
 }
-
 \renewcommand{\cipbibname}{%
 	Bibliographic Reference%
 }
-
 \renewcommand{\ciprightsname}{%
 	Cession of Rights%
 }
-
 \renewcommand{\ciprights}{%
 	\footnotesize{AUTHOR NAME: }\normalsize\@authors.\\
 	\footnotesize{PUBLICATION TITLE: }\normalsize\@title\\
@@ -268,27 +247,22 @@ acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} r
 	The author reserves other publication rights and no part of this \worklevel{} can be reproduced
 	without his authorization.
 }
-
 \renewcommand{\ciptext}{%
 \worklevel{} de \course{} - Curso de \@workcourse.
 {\'A}rea de \@workarea{} - \ITA, \date@year.
 \@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
 }
-
 \renewcommand{\cipref}{%
 	\authors@ref. \textbf{\@title}.
 	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
 	\@workarea{} - \ITA, \city.
 }
-
 \renewcommand{\ciptitle}{%
 	Title%
 }
-
 \renewcommand{\committeetext}{%
 	Thesis Committee Composition%
 }
-
 }
 \renewcommand{\annexname}{Annex}
 }
