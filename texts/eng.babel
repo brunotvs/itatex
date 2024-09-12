@@ -266,3 +266,5 @@ acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} r
 }
 \renewcommand{\annexname}{Annex}
 }
+
+% vi: set filetype=tex:
