@@ -1,107 +1,107 @@
 \ProvidesFile{tg.tex}
 
 \renewcommand\maketitle{
-    \begin{titlepage}%
-        \noindent\framebox[\textwidth]{%            
-            \begin{minipage}[t][\textheight-2mm][t]{\textwidth-1em}
-                \begin{center}
-                    \makebox[\textwidth][s]{\Large\bf\MakeUppercase{\ITA}\par}
-                    \vfill\par
-                    \includegraphics[width=.5\textwidth]{assets/ita_logo.jpg}\par
-                    \vfill\par                    
-                    {\setlength\parskip{0pt}\Large\bf\@Authors}
-                    \vfill\par
-                    {\LARGE\bf\MakeUppercase{\@title}\par}
-                    \vfill\par
-                    {\LARGE\tgtitletext.\par\date@year}                    
-                    \vfill\par
-                    {\huge\bf\tgcoursetext}
-                \end{center}
-            \end{minipage}
-        }
-    \end{titlepage}%
-    \thispagestyle{empty}
-    \begin{titlepage}
-        \begin{center}
-            {\hfill\footnotesize\@CDU\par}
-            \vspace{2ex}\par
-            {\setlength\parskip{0pt}\Large\bf\@Authors}
-            \vfill\par
-            {\LARGE\bf\MakeUppercase{\@title}\par}
-            \vfill\par 
-            {\setlength\parskip{0pt}%           
-                \@advname\par%
-                \@adv@plain\par%
-                \vfill\par%
-                \ifthenelse{\value{c@coadv}=0}{}{\@coadvname\par\@coadv@plain}%
-            } 
-            \vfill\par
-            {\Large\bf\MakeUppercase{\@workcourse}\par}
-            \vfill\par
-            {\sc\city\par\ITA\par}
-            \vspace{1ex}\par
-            \date@year
-        \end{center}
-    \end{titlepage}
+	\begin{titlepage}%
+		\noindent\framebox[\textwidth]{%            
+			\begin{minipage}[t][\textheight-2mm][t]{\textwidth-1em}
+				\begin{center}
+					\makebox[\textwidth][s]{\Large\bf\MakeUppercase{\ITA}\par}
+					\vfill\par
+					\includegraphics[width=.5\textwidth]{assets/ita_logo.jpg}\par
+					\vfill\par
+					{\setlength\parskip{0pt}\Large\bf\@Authors}
+					\vfill\par
+					{\LARGE\bf\MakeUppercase{\@title}\par}
+					\vfill\par
+					{\LARGE\tgtitletext.\par\date@year}
+					\vfill\par
+					{\huge\bf\tgcoursetext}
+				\end{center}
+			\end{minipage}
+		}
+	\end{titlepage}%
+	\thispagestyle{empty}
+	\begin{titlepage}
+		\begin{center}
+			{\hfill\footnotesize\@CDU\par}
+			\vspace{2ex}\par
+			{\setlength\parskip{0pt}\Large\bf\@Authors}
+			\vfill\par
+			{\LARGE\bf\MakeUppercase{\@title}\par}
+			\vfill\par
+			{\setlength\parskip{0pt}%           
+				\@advname\par%
+				\@adv@plain\par%
+				\vfill\par%
+				\ifthenelse{\value{c@coadv}=0}{}{\@coadvname\par\@coadv@plain}%
+			}
+			\vfill\par
+			{\Large\bf\MakeUppercase{\@workcourse}\par}
+			\vfill\par
+			{\sc\city\par\ITA\par}
+			\vspace{1ex}\par
+			\date@year
+		\end{center}
+	\end{titlepage}
 }
 
 \newcommand{\makecommittee}{%     
-\begin{titlepage}
-        \begin{center}
-            {\LARGE\bfseries\MakeUppercase{\@title}\par}
-            {\setlength\parskip{0pt}%           
-                \vfill\par%
-                \author@subs%
-                \sub@line@tg[\rule{8cm}{.1pt}\par]
-            }
-            \city, \my@date
-        \end{center}
-    \end{titlepage}
+	\begin{titlepage}
+		\begin{center}
+			{\LARGE\bfseries\MakeUppercase{\@title}\par}
+			{\setlength\parskip{0pt}%           
+				\vfill\par%
+				\author@subs%
+				\sub@line@tg[\rule{8cm}{.1pt}\par]
+			}
+			\city, \itatex@date
+		\end{center}
+	\end{titlepage}
 }
 
 \newcommand{\@adv@plain}[1][\relax]{%
-    \setcounter{\@i}{0}%
-    \whiledo{\value{\@i}<\value{c@adv}}{%
-        #1%
-        \stepcounter{\@i}%
-        \csname adv\Roman{\@i}@prof\endcsname~%
-        \csname adv\Roman{\@i}@title\endcsname~%
-        \csname adv\Roman{\@i}@name\endcsname~%    
-        (\csname adv\Roman{\@i}@inst\endcsname)\par%    
-    }%
+	\setcounter{\@i}{0}%
+	\whiledo{\value{\@i}<\value{c@adv}}{%
+		#1%
+		\stepcounter{\@i}%
+		\csname adv\Roman{\@i}@prof\endcsname~%
+		\csname adv\Roman{\@i}@title\endcsname~%
+		\csname adv\Roman{\@i}@name\endcsname~%    
+		(\csname adv\Roman{\@i}@inst\endcsname)\par%    
+	}%
 }
 
 \newcommand{\@coadv@plain}[1][\relax]{%
-    \setcounter{\@i}{0}%
-    \whiledo{\value{\@i}<\value{c@coadv}}{%
-        #1%
-        \stepcounter{\@i}%
-        \csname coadv\Roman{\@i}@prof\endcsname~%
-        \csname coadv\Roman{\@i}@title\endcsname~%
-        \csname coadv\Roman{\@i}@name\endcsname~%    
-        (\csname coadv\Roman{\@i}@inst\endcsname)\par%    
-    }%
+	\setcounter{\@i}{0}%
+	\whiledo{\value{\@i}<\value{c@coadv}}{%
+		#1%
+		\stepcounter{\@i}%
+		\csname coadv\Roman{\@i}@prof\endcsname~%
+		\csname coadv\Roman{\@i}@title\endcsname~%
+		\csname coadv\Roman{\@i}@name\endcsname~%    
+		(\csname coadv\Roman{\@i}@inst\endcsname)\par%    
+	}%
 }
 
 \newcommand{\author@subs}{%
-    \setcounter{\@i}{0}%
-    \whiledo{\value{\@i}<\value{c@author}}{%
-        \rule{8cm}{.1pt}\par%
-        \stepcounter{\@i}%
-        \csname author\Roman{\@i}@name\endcsname\par\vfill%    
-    }%
+	\setcounter{\@i}{0}%
+	\whiledo{\value{\@i}<\value{c@author}}{%
+		\rule{8cm}{.1pt}\par%
+		\stepcounter{\@i}%
+		\csname author\Roman{\@i}@name\endcsname\par\vfill%    
+	}%
 }
 
 \newcommand{\sub@line@tg}[1][\relax]{%
-    \setcounter{\@i}{0}
-    \whiledo{\value{\@i}<\value{c@subs}}{%
-        #1%
-        \stepcounter{\@i}
-        \csname subs\Roman{\@i}@prof\endcsname{}~%
-        \csname subs\Roman{\@i}@title\endcsname{}~%
-        \csname subs\Roman{\@i}@name\endcsname~%
-        (\csname subs\Roman{\@i}@inst\endcsname)\par%
-        \vspace{-\parskip}\csname subs\Roman{\@i}@text\endcsname%
-        \vfill\par
-    }
+	\setcounter{\@i}{0}
+	\whiledo{\value{\@i}<\value{c@subs}}{%
+		#1%
+		\stepcounter{\@i}
+		\csname subs\Roman{\@i}@prof\endcsname{}~%
+		\csname subs\Roman{\@i}@title\endcsname{}~%
+		\csname subs\Roman{\@i}@name\endcsname~%
+		(\csname subs\Roman{\@i}@inst\endcsname)\par%
+		\vspace{-\parskip}\csname subs\Roman{\@i}@text\endcsname%
+		\vfill\par
+	}
 }

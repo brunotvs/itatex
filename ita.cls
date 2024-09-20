@@ -421,7 +421,7 @@
 	\defauthor@a \defa@o
 	\RequirePackage{datetime2}
 	\DTMsetup{useregional}
-	\newcommand{\my@date}{\DTMdate{\@date}}
-	\DTMsavedate{mydate}{\@date}
-	\newcommand{\date@year}{\DTMfetchyear{mydate}}
+	\newcommand{\itatex@date}{\DTMdate{\@date}}
+	\DTMsavedate{itatexdate}{\@date}
+	\newcommand{\date@year}{\DTMfetchyear{itatexdate}}
 }
