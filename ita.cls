@@ -395,6 +395,9 @@
 
 \AtBeginDocument{%
 	\@ifpackageloaded{biblatex}{%
+		\setlength{\bibnamesep}{0ex}%
+		\setlength{\bibparsep}{-1.5ex}
+
 		\defbibheading{bibliography}[\refname]{%
 			\chapter*{#1}%
 			\addcontentsline{toc}{chapter}{#1}%
