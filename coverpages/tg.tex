@@ -9,13 +9,13 @@
 					\vfill\par
 					\includegraphics[width=.5\textwidth]{assets/ita_logo.jpg}\par
 					\vfill\par
-					{\setlength\parskip{0pt}\Large\bf\@Authors}
+					{\large\bf\@Authors}
 					\vfill\par
 					{\LARGE\bf\MakeUppercase{\@title}\par}
 					\vfill\par
-					{\LARGE\tgtitletext.\par\date@year}
+					{\setlength\parskip{1ex}\LARGE\tgtitletext\par\date@year}
 					\vfill\par
-					{\huge\bf\tgcoursetext}
+					{\setlength\lineskip{.5ex}\huge\bf\tgcoursetext\par}
 				\end{center}
 			\end{minipage}
 		}
@@ -25,7 +25,7 @@
 		\begin{center}
 			{\hfill\footnotesize\@CDU\par}
 			\vspace{2ex}\par
-			{\setlength\parskip{0pt}\Large\bf\@Authors}
+			{\setlength\parskip{0pt}\large\bf\@Authors}
 			\vfill\par
 			{\LARGE\bf\MakeUppercase{\@title}\par}
 			\vfill\par
@@ -38,7 +38,7 @@
 			\vfill\par
 			{\Large\bf\MakeUppercase{\@workcourse}\par}
 			\vfill\par
-			{\sc\city\par\ITA\par}
+			{\setlength\parskip{-1ex}\sc\city\par\ITA\par}
 			\vspace{1ex}\par
 			\date@year
 		\end{center}
@@ -49,6 +49,8 @@
 	\begin{titlepage}
 		\begin{center}
 			{\LARGE\bfseries\MakeUppercase{\@title}\par}
+			\vfill\par
+			{\committeetext\par}
 			{\setlength\parskip{0pt}%           
 				\vfill\par%
 				\author@subs%

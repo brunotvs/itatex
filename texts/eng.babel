@@ -1,74 +1,78 @@
-\ProvidesFile{eng.babel}
-\addto\captionsenglish{%
+\ProvidesFile{eng.babel} \addto\captionsenglish{%
 \ifthenelse{\equal{\DocumentType}{tg}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}
 	{%
-		\renewcommand{\authortitle}{Engenheiro}%
+		\renewcommand{\authortitle}{engineer}%
 	}{}
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
-		\renewcommand{\authortitle}{Engenheira}%
+		\renewcommand{\authortitle}{engineer}%
 	}{}
-	\renewcommand{\course}{Gradua{\c{c}}{\~a}o}
-	\renewcommand{\worklevel}{Trabalho}
+	\renewcommand{\course}{Undergraduation study}%
+	\renewcommand{\this@worklevel}{this}
+	\renewcommand{\worklevel}{final paper}%
 	\renewcommand{\titletext}{\tgtitletext}
 }{}
 \ifthenelse{\equal{\DocumentType}{msc}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}%
 	{%
-		\renewcommand{\authortitle}{Master}%
+		\renewcommand{\authortitle}{master}%
 	}{}
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
-		\renewcommand{\authortitle}{Master}%
+		\renewcommand{\authortitle}{master}%
 	}{}
 	\renewcommand{\course}{Master of Science}
-	\renewcommand{\worklevel}{Dissertation}
+	\renewcommand{\this@worklevel}{this}
+	\renewcommand{\worklevel}{dissertation}
 	\renewcommand{\titletext}{\latotitletext}
 }{}
 \ifthenelse{\equal{\DocumentType}{dsc}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}%
 	{%
-		\renewcommand{\authortitle}{Doctor}%
+		\renewcommand{\authortitle}{doctor}%
 	}{}
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
-		\renewcommand{\authortitle}{Doctor}%
+		\renewcommand{\authortitle}{doctor}%
 	}{}
 	\renewcommand{\course}{Doctor of Science}
-	\renewcommand{\worklevel}{Thesis}
-	\renewcommand{\titletext}{\latotitletext}
-}{}
-\ifthenelse{\equal{\DocumentType}{quali}}%
-{%
-	\ifthenelse{\equal{\AuthorGender}{male}}%
-	{%
-		\renewcommand{\authortitle}{Doctor}%
-	}{}
-	\ifthenelse{\equal{\AuthorGender}{female}}%
-	{%
-		\renewcommand{\authortitle}{Doctor}%
-	}{}
-	\renewcommand{\course}{Doctor of Science}
-	\renewcommand{\worklevel}{Monography}
+	\renewcommand{\this@worklevel}{this}
+	\renewcommand{\worklevel}{thesis}
 	\renewcommand{\titletext}{\latotitletext}
 }{}
 \ifthenelse{\equal{\DocumentType}{msp}}%
 {%
 	\ifthenelse{\equal{\AuthorGender}{male}}%
 	{%
-		\renewcommand{\authortitle}{Master}%
+		\renewcommand{\authortitle}{master}%
 	}{}
 	\ifthenelse{\equal{\AuthorGender}{female}}%
 	{%
-		\renewcommand{\authortitle}{Master}%
+		\renewcommand{\authortitle}{master}%
 	}{}
 	\renewcommand{\course}{Master of Engineering}
-	\renewcommand{\worklevel}{Dissertation}
+	\renewcommand{\this@worklevel}{this}
+	\renewcommand{\worklevel}{dissertation}
 	\renewcommand{\titletext}{\strictotitletext}
+}{}
+\ifthenelse{\equal{\DocumentType}{quali}}%
+{%
+	\ifthenelse{\equal{\AuthorGender}{male}}%
+	{%
+		\renewcommand{\authortitle}{doctor}%
+	}{}
+	\ifthenelse{\equal{\AuthorGender}{female}}%
+	{%
+		\renewcommand{\authortitle}{doctor}%
+	}{}
+	\renewcommand{\course}{Doctor of Science}
+	\renewcommand{\this@worklevel}{this}
+	\renewcommand{\worklevel}{monography}
+	\renewcommand{\titletext}{\latotitletext}
 }{}
 \renewcommand{\a@o}{\empty}
 \renewcommand{\defa@o}{%
@@ -76,16 +80,16 @@
 	{%
 		\ifthenelse{\equal{\thec@author}{1}}
 		{%
-			\renewcommand{\a@o}{\a@o@m@s}%
+			\renewcommand{\a@o}{the}%
 		}{%
-			\renewcommand{\a@o}{\a@o@m@p}%
+			\renewcommand{\a@o}{the}%
 		}
 	}{%
 		\ifthenelse{\equal{\thec@author}{1}}
 		{%
-			\renewcommand{\a@o}{\a@o@f@s}%
+			\renewcommand{\a@o}{the}%
 		}{%
-			\renewcommand{\a@o}{\a@o@f@p}%
+			\renewcommand{\a@o}{the}%
 		}
 	}
 }
@@ -98,28 +102,19 @@
 \renewcommand{\a@o@f@s}{a}
 \renewcommand{\a@o@f@p}{as}
 \renewcommand{\tgtitletext}{%
-	\worklevel{} de \course%
+	Final Paper%
 }
 \renewcommand{\tgcoursetext}{%
-	Curso de \@workcourse%
+	Course of \@workcourse%
 }
 \renewcommand{\latotitletext}{%
-	\worklevel{} presented to the Instituto
-	Tecnol{\'o}gico de Aeron{\'a}utica, in partial
-	fulfillment of the requirements for the degree of
-	\authortitle{} of Science in the Program of
-	\@workcourse, Field \@workarea.%
+	\expandafter\MakeUppercase\worklevel{} presented to the \ITA, in partial fulfillment of the requirements for the degree of \authortitle{} of Science in the Program of \@workcourse, Field \@workarea.%
 }
 \renewcommand{\strictotitletext}{%
-	\worklevel{} presented to the Instituto
-	Tecnol{\'o}gico de Aeron{\'a}utica, in partial
-	fulfillment of the requirements for the degree of
-	\authortitle{} of Engineering of the Professional
-	Mester's Course in \@workcourse.%
+	\expandafter\MakeUppercase\worklevel{} presented to the Instituto Tecnol{\'o}gico de Aeron{\'a}utica, in partial fulfillment of the requirements for the degree of \authortitle{} of Engineering of the Professional Mester's Course in \@workcourse.%
 }
 \renewcommand{\aprovedtext}{%
-	\worklevel{} approved in its final version by the
-	signatories below:%
+	\expandafter\MakeUppercase\worklevel{} approved in its final version by the signatories below:%
 }
 \renewcommand{\location}{Campo Montenegro}
 \renewcommand{\city}{S\~{a}o Jos\'{e} dos Campos}
@@ -128,10 +123,10 @@
 \renewcommand{\@female}{\@empty}
 \renewcommand{\@male}{\@empty}
 \renewcommand{\prof@female}{%
-	Prof.%
+	Prof.~%
 }
 \renewcommand{\prof@male}{%
-	Prof.%
+	Prof.~%
 }
 \renewcommand{\dr@female}{%
 	Dr.%
@@ -192,53 +187,11 @@
 	Pro-Rector of Graduate Courses%
 }
 \renewcommand{\coor@female}{%
-	Coordenadora do Curso \@workcourse%
+	Course Coordinator of \@workcourse%
 }
 \renewcommand{\coor@male}{%
-	Coordenador do Curso \@workcourse%
+	Course Coordinator of \@workcourse%
 }
-\ifthenelse{\equal{\DocumentType}{tg}}%
-{%
-\renewcommand{\ciphead}{%
-	Dados Internacionais de Cataloga{\c{c}}{\~a} na
-	Publi{\c{c}}{\~a}o (CIP)\\
-	Divis{\~a}o de Informa{\c{c}}{\~a}o e Documenta{\c{c}}{\~a}o
-}
-\renewcommand{\cipbibname}{%
-	Refer{\^e}ncia bibliogr{\'a}fica%
-}
-\renewcommand{\ciprightsname}{%
-	Cess{\~a}o de direitos% 
-}
-\renewcommand{\ciprights}{%
-\footnotesize{NOME D\MakeUppercase{\a@o} \MakeUppercase{\author@a}: }\normalsize\@authors.\\
-\footnotesize{T{\'I}TULO DO TRABALHO: }\normalsize\@title\\
-\footnotesize{TIPO DO TRABALHO/ANO: }\normalsize\worklevel{}/\date@year\\
-\vspace{2ex}\\
-\noindent{\'E} cedida ao \ITA{} permiss{\~a}o para reproduzir c{\'o}pias desta
-\worklevel{} e para emprestar e vender c{\'o}pias somente para prop{\'o}sios
-acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} reserva\ifthenelse{%
-	\value{c@author}>1}{m}{} outros direitos de publica{\c{c}}{\~a}o e nenhuma parte dest\ifx \DocumentType{tg}{e}\else{a}\fi{}
-\worklevel{} pode ser reproduzida sem a sua autoriza{\c{c}}{\~a}o (d\a@o{} \author@a{}).
-}
-\renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
-\renewcommand{\ciptext}{%
-\worklevel{} de \course{} - Curso de \@workcourse.
-{\'A}rea de \@workarea{} - \ITA, \date@year.
-\@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
-}
-\renewcommand{\cipref}{%
-	\authors@ref. \textbf{\@title}.
-	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
-	\@workarea{} - \ITA, \city.
-}
-\renewcommand{\ciptitle}{%
-	T{\'i}tulo%
-}
-\renewcommand{\committeetext}{%
-	Composi{\c{c}}{\~a}o da Banca Examinadora%
-}
-} {
 \renewcommand{\ciphead}{%
 	Cataloging-in-Publication Data\\
 	Documentation and Information Division
@@ -249,34 +202,49 @@ acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase\a@o{} \author@a{} r
 \renewcommand{\ciprightsname}{%
 	Cession of Rights%
 }
-\renewcommand{\ciprights}{%
-	\footnotesize{AUTHOR NAME: }\normalsize\@authors.\\
+\ifthenelse{\equal{\DocumentType}{tg}}%
+{%
+	\renewcommand{\ciprights@type}{\course}%
+}{%
+	\renewcommand{\ciprights@type}{\expandafter\MakeUppercase\worklevel}%
+}
+\renewcommand{\ciprights}{% TODO: Check translation
+	\footnotesize{\ifthenelse{\value{c@author}>1}{AUTHORS' NAMES}{AUTHOR'S NAME}: }\normalsize\@authors.\\
 	\footnotesize{PUBLICATION TITLE: }\normalsize\@title\\
-	\footnotesize{PUBLICATION KIND/YEAR: }\normalsize\worklevel{}/\date@year\\
+	\footnotesize{PUBLICATION KIND/YEAR: }\normalsize\ciprights@type{}/\date@year\\
 	\vspace{2ex}\\
-	\noindent It is granted to \ITA{} permission to reproduce copies of this
-	\worklevel{} to only loan or sell copies for academic and scietific purposes.
-	The author reserves other publication rights and no part of this \worklevel{} can be reproduced
-	without his authorization.
+	\noindent It is granted to \ITA{} permission to reproduce copies of \this@worklevel{} \worklevel{} to only loan or sell copies for academic and scietific purposes. The \author@a{} \ifthenelse{\value{c@author}>1}{reserve}{reserves} other publication rights and no part of this \worklevel{} can be reproduced without the authorization of the \author@a.
+}
+\renewcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
+\ifthenelse{\equal{\DocumentType}{tg}}%
+{%
+	\renewcommand{\cipttext@course}{\@workcourse}%
+}{%
+	\renewcommand{\cipttext@course}{\@workcourse. Area of \@workarea{}}%
 }
 \renewcommand{\ciptext}{%
-\worklevel{} de \course{} - Curso de \@workcourse.
-{\'A}rea de \@workarea{} - \ITA, \date@year.
-\@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
+	\expandafter\MakeUppercase\worklevel{} of \course{} - Course of \cipttext@course{} - \ITA, \date@year. \@advname: \adv@plain. \ifthenelse{\value{c@coadv}=0}{}{\@coadvname: \adv@plain.}
+}
+\ifthenelse{\equal{\DocumentType}{tg}}%
+{%
+	\renewcommand{\cipref@work}{Final paper}%
+}{%
+	\renewcommand{\cipref@work}{\expandafter\MakeUppercase\worklevel{}}%
 }
 \renewcommand{\cipref}{%
-	\authors@ref. \textbf{\@title}.
-	\date@year. \pageref{LastPage}f. \worklevel{} de \course{} em
-	\@workarea{} - \ITA, \city.
+	\authors@ref. \textbf{\@title}. \date@year. \pageref{LastPage}p. \cipref@work{} (\course{} in \@workcourse{}) - \ITA, \city, \date@year.%
 }
 \renewcommand{\ciptitle}{%
 	Title%
 }
 \renewcommand{\committeetext}{%
-	Thesis Committee Composition%
-}
+	\ifthenelse{\equal{\DocumentType}{tg}}%
+	{%
+		This publication was accepted like Final Work of Undergraduation Study%
+	}{%
+		Thesis Committee Composition%
+	}
 }
 \renewcommand{\annexname}{Annex}
 }
-
 % vi: set filetype=tex:

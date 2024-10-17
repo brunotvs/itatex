@@ -1,113 +1,115 @@
 \ProvidesFile{envs.tex}
 
 \newenvironment{membs}{%
-    \vspace{-\parskip}\par%
-    \let\tmp@sep\@sep%
-    \let\tmp@and\and%
-    \renewcommand{\@sep}{&}%
-    \begin{spacing}{1}%
-}{%
-    \end{spacing}%
-    \let\@sep\temp@sep%
-    \let\and\temp@and%
+	\vspace{-\parskip}\par%
+	\let\tmp@sep\@sep%
+	\let\tmp@and\and%
+	\renewcommand{\@sep}{&}%
+	\begin{spacing}{1}%
+		}{%
+	\end{spacing}%
+	\let\@sep\temp@sep%
+	\let\and\temp@and%
 }
 
 \if@compatibility
-    \renewenvironment{titlepage}
-    {%
-        \cleardoublepage
-        \if@twocolumn
-            \@restonecoltrue\onecolumn
-        \else
-            \@restonecolfalse\newpage
-        \fi
-        \thispagestyle{empty}%
-    }{%
-        \if@restonecol\twocolumn \else \newpage \fi
-    }
+	\renewenvironment{titlepage}
+	{%
+		\cleardoublepage
+		\if@twocolumn
+			\@restonecoltrue\onecolumn
+		\else
+			\@restonecolfalse\newpage
+		\fi
+		\thispagestyle{empty}%
+	}{%
+		\if@restonecol\twocolumn \else \newpage \fi
+	}
 \else
-    \renewenvironment{titlepage}
-    {%
-        \cleardoublepage
-        \if@twocolumn
-            \@restonecoltrue\onecolumn
-        \else
-            \@restonecolfalse\newpage
-        \fi
-        \thispagestyle{empty}%
-    }{%
-        \if@restonecol\twocolumn \else \newpage \fi
-        \if@twoside\else
-        \fi
-    }
+	\renewenvironment{titlepage}
+	{%
+		\cleardoublepage
+		\if@twocolumn
+			\@restonecoltrue\onecolumn
+		\else
+			\@restonecolfalse\newpage
+		\fi
+		\thispagestyle{empty}%
+	}{%
+		\if@restonecol\twocolumn \else \newpage \fi
+		\if@twoside\else
+		\fi
+	}
 \fi
 
 \newenvironment{kwords}{%
-    \newcounter{kw}
-    \setcounter{kw}{1}
-    \let\tmp@and\and
-    \renewcommand{\and}{%
-        \addtocounter{kw}{1}
-        \thekw. 
-    }
-    \thekw. 
+	\newcounter{kw}
+	\setcounter{kw}{1}
+	\let\tmp@and\and
+	\renewcommand{\and}{%
+		\unskip%
+		.\space
+		\addtocounter{kw}{1}%
+		\thekw.
+	}
+	\thekw.
 }{%
-    \let\and\temp@and
+	\let\and\temp@and
 }
 
 \newenvironment{subs}{%
-    \let\tmp@sep\@sep
-    \let\tmp@and\and
-    \renewcommand{\@sep}{\\}
-    \renewcommand{\and}{%
-        \end{tabular}
-        \par
-        \vfill
-        \begin{tabular}[t]{c}
-    }
+	\let\tmp@sep\@sep
+	\let\tmp@and\and
+	\renewcommand{\@sep}{\\}
+	\renewcommand{\and}{%
+		\end{tabular}
+		\par
+		\vfill
+		\begin{tabular}[t]{c}
+	}
 }{%
-    \let\@sep\temp@sep
-    \let\and\temp@and
+	\let\@sep\temp@sep
+	\let\and\temp@and
 }
 
 \renewenvironment{thebibliography}[1]
 {%
-    \chapter*{\bibname
-    \refstepcounter{chapter}
-    \addcontentsline{toc}{chapter}{\bibname}
-    \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}%      
-    \singlespacing			
-        \flushleft				
-        \list{\@biblabel{\@arabic\c@enumiv}}%
-        {\settowidth\labelwidth{\@biblabel{#1}}%
-        \leftmargin\labelwidth
-        \advance\leftmargin\labelsep
-        \@openbib@code
-        \usecounter{enumiv}%
-        \let\p@enumiv\@empty
-        \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-    \sloppy
-    \clubpenalty4000
-    \@clubpenalty \clubpenalty
-    \widowpenalty4000%
-    \sfcode`\.\@m
+	\chapter*{\bibname
+	  \refstepcounter{chapter}
+	  \addcontentsline{toc}{chapter}{\bibname}
+	  \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}%      
+	\singlespacing
+	\flushleft
+	\list{\@biblabel{\@arabic\c@enumiv}}%
+	{\settowidth\labelwidth{\@biblabel{#1}}%
+		\leftmargin\labelwidth
+		\advance\leftmargin\labelsep
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m
 }{%
-    \def\@noitemerr
-    {\@latex@warning{Empty `thebibliography' environment}}%
-    \endlist%
+	\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist%
 }
 
 \renewenvironment{quotation}{%
-    \footnotesize\begin{spacing}{1}\list{}{%
-        \leftmargin 4cm
-        \parsep        \z@ \@plus\p@}%
-        \item\relax%
-}{%
-    \endlist\end{spacing}%
+	\footnotesize\begin{spacing}{1}\list{}{%
+			\leftmargin 4cm
+			\parsep        \z@ \@plus\p@}%
+		\item\relax%
+		}{%
+		\endlist\end{spacing}%
 }
 \renewenvironment{quote}{%
-    \list{}{\rightmargin\leftmargin}%
-    \item\relax%
+	\list{}{\rightmargin\leftmargin}%
+	\item\relax%
 }{%
-    \endlist%
+	\endlist%
 }

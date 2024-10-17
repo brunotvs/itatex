@@ -1,40 +1,40 @@
 \ProvidesFile{cip.tex}
 
 \newcommand{\makecip}{%
-    \newpage
-    \thispagestyle{empty}
-    \noindent
-    {\footnotesize
-    \textbf{\ciphead}\par\vspace{-\parskip}
-    \setlength\fboxsep{5mm}
-    \noindent\framebox[\textwidth]{%
-        \begin{minipage}{\textwidth-15mm}  
-            \begin{flushleft}
-                \setlength{\parindent}{3.5em}          
-                \noindent\authorI@last, \authorI@first\par
-                \@title{} / \@authors.\par
-                \noindent\city, \date@year.\par
-                \noindent\pageref{LastPage}f.\par
-                \vspace{1ex}\par
-                \ciptext\par
-                \vspace{1ex}\par
-                \begin{kwords}
-                    \@keywords
-                \end{kwords}
-                \cip@authors{}\Roman{c@cip}.~\ITA. \stepcounter{c@cip}\Roman{c@cip}.~\ciptitle.
-            \end{flushleft}
-        \end{minipage}
-    }}\par 
-    \vfill\par
-    {\setlength\parskip{0pt}%
-        \begin{spacing}{1}
-                {\noindent\large\MakeUppercase{\textbf{\cipbibname}}\vspace{1ex}\par}
-                {\raggedright\cipref\par}
-                \vfill\par            
-                {\noindent\large\MakeUppercase{\textbf{\ciprightsname}}\vspace{1ex}\par}
-                \noindent\ciprights\par
-                \vfill\par
-                \author@address
-        \end{spacing}%
-    }
+	\newpage
+	\thispagestyle{empty}
+	\noindent
+	{\footnotesize
+		\textbf{\ciphead}\par\vspace{-\parskip}
+		\setlength\fboxsep{5mm}
+		\noindent\framebox[\textwidth]{%
+			\begin{minipage}{\textwidth-15mm}
+				\begin{flushleft}
+					\setlength{\parindent}{3.5em}
+					\noindent\authorI@last, \authorI@first\par
+					\@title{} / \@authors.\par
+					\noindent\city, \date@year.\par
+					\noindent\pageref{LastPage}f.\par
+					\vspace{1ex}\par
+					\ciptext\par
+					\vspace{1ex}\par
+					\begin{kwords}
+						\@keywords.
+					\end{kwords}
+					\cip@authors{}\Roman{c@cip}.~\ITA. \stepcounter{c@cip}\Roman{c@cip}.~\ciptitle.
+				\end{flushleft}
+			\end{minipage}
+		}}\par
+	\vfill\par
+	{\setlength\parskip{0pt}%
+		\begin{spacing}{1}
+			{\noindent\large\MakeUppercase{\textbf{\cipbibname}}\vspace{1ex}\par}
+			{\raggedright\cipref\par}
+			\vfill\par
+			{\noindent\large\MakeUppercase{\textbf{\ciprightsname}}\vspace{1ex}\par}
+			\noindent\ciprights\par
+			\vfill\par
+			\author@address
+		\end{spacing}%
+	}
 }

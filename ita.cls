@@ -300,7 +300,7 @@
 	\def\coadv@text{\csname adv@#1\endcsname}%
 	\def\coadv@inst{#5}%
 	\@addcoadvisor{#1}{#2}{#3}{#4}{#5}%
-	\@addsubscriber{#1}{#2}{#3}{#4}{adv}{#5}%
+	\@addsubscriber{#1}{#2}{#3}{#4}{coadv}{#5}%
 	\@addmember{#1}{#2}{#3}{#4}{adv}{#5}%
 }
 
@@ -365,15 +365,26 @@
 }
 
 \newcommand{\memb@line}{%
-	\setcounter{\@i}{0}%
-	\whiledo{\value{\@i}<\value{c@memb}}{%
-		\stepcounter{\@i}%
-		\csname memb\Roman{\@i}@prof\endcsname{}~%
-		\csname memb\Roman{\@i}@title\endcsname{}~%
-		\csname memb\Roman{\@i}@name\endcsname\@sep\hfill\@sep%
-		\csname memb\Roman{\@i}@text\endcsname\@sep-\@sep%
-		\csname memb\Roman{\@i}@inst\endcsname\\
-	}
+	\begin{tabular*}{\textwidth}{
+			@{\extracolsep{0pt}}l
+			@{\extracolsep{.5em}}l
+			@{\extracolsep{\fill}}c
+			@{\extracolsep{0pt}}l
+			c
+			r
+		}
+		\setcounter{\@i}{0}%
+		\whiledo{\value{\@i}<\value{c@memb}}{%
+			\stepcounter{\@i}%
+			\csname memb\Roman{\@i}@prof\endcsname%
+			\csname memb\Roman{\@i}@title\endcsname\@sep%
+			\csname memb\Roman{\@i}@name\endcsname\@sep%
+			\hfill\@sep%
+			\csname memb\Roman{\@i}@text\endcsname\@sep%
+			-\@sep%
+			\csname memb\Roman{\@i}@inst\endcsname\\
+		}
+	\end{tabular*}
 }
 
 \newcommand{\sub@line}{%
