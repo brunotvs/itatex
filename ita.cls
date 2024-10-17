@@ -395,15 +395,6 @@
 
 \AtBeginDocument{%
 	\@ifpackageloaded{biblatex}{%
-		\defbibenvironment{bibliography}
-		{\singlespacing\list{}
-			{\setlength{\leftmargin}{\bibhang}%
-				\setlength{\itemindent}{-\leftmargin}%
-				\setlength{\itemsep}{2ex}%
-				\setlength{\parsep}{\bibparsep}}}
-		{\endlist}
-		{\item}
-
 		\defbibheading{bibliography}[\refname]{%
 			\chapter*{#1}%
 			\addcontentsline{toc}{chapter}{#1}%
