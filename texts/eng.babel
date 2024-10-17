@@ -155,22 +155,34 @@
 	Chairperson%
 }
 \renewcommand{\pres@male}{%
-	\pres@f%
+	\pres@female%
+}
+\renewcommand{\memi@male}{
+	Internal Member%
+}
+\renewcommand{\memi@female}{
+	Internal Member%
+}
+\renewcommand{\meme@male}{
+	External Member%
+}
+\renewcommand{\meme@female}{
+	External Member%
 }
 \renewcommand{\@advname}{%
 	\ifthenelse{\value{c@adv}=1}%
 	{%
-		Orientador%
+		Advisor%
 	}{%
-		Orientadores%
+		Advisors%
 	}%    
 }
 \renewcommand{\@coadvname}{%
 	\ifthenelse{\value{c@coadv}=1}%
 	{%
-		Co-orientador%
+		Co-advisor%
 	}{%
-		Co-orientadores%
+		Co-advisors%
 	}% 
 }
 \renewcommand{\rec@female}{%
