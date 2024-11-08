@@ -108,10 +108,10 @@
 	Curso de \@workcourse%
 }
 \newcommand{\latotitletext}{%
-\expandafter\MakeUppercase\worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de P{\'o}s-Gradua{\c{c}}{\~a}o do \ITA, como parte dos requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de \authortitle{} em Ci{\^e}ncias no Programa de P{\'o}s-Gradua{\c{c}}{\~a}o em \@workcourse, \@workarea.%
+\expandafter\MakeUppercase\worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de P{\'o}s-Gradua{\c{c}}{\~a}o do \ITA, como parte dos requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de \expandafter\MakeUppercase\authortitle{} em Ci{\^e}ncias no Programa de P{\'o}s-Gradua{\c{c}}{\~a}o em \@workcourse, \@workarea.%
 }
 \newcommand{\strictotitletext}{%
-\expandafter\MakeUppercase\worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de P{\'o}s-Gradua{\c{c}}{\~a}o do Instituto Tecnol{\'o}gico de Aeron{\'a}utica, como parte dos requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de \authortitle{} em Engenharia do Curso de Mestrado Profissional em \@workcourse.%
+\expandafter\MakeUppercase\worklevel{} apresentada {\`a} Pr{\'o}-Reitoria de P{\'o}s-Gradua{\c{c}}{\~a}o do Instituto Tecnol{\'o}gico de Aeron{\'a}utica, como parte dos requisitos para obten{\c{c}}{\~a}o do t{\'i}tulo de \expandafter\MakeUppercase\authortitle{} em Engenharia do Curso de Mestrado Profissional em \@workcourse.%
 }
 \newcommand{\@workcourse}{curso}
 \newcommand{\@workarea}{{\'a}rea}
@@ -217,7 +217,7 @@
 	\vspace{2ex}\\
 	\noindent{\'E} cedida ao \ITA{} permiss{\~a}o para reproduzir c{\'o}pias \this@worklevel{} \worklevel{} de \course{} e para emprestar e vender c{\'o}pias somente para prop{\'o}sios acad{\^e}micos e cient{\'i}ficos. \expandafter\MakeUppercase \a@o{} \author@a{} reserva\ifthenelse{\value{c@author}>1}{m}{} outros direitos de publica{\c{c}}{\~a}o e nenhuma parte dest\ifthenelse{\equal{\DocumentType}{tg}}{e}{a} \worklevel{} pode ser reproduzida sem a autoriza{\c{c}}{\~a}o d\a@o{} \author@a{}.%
 }
-\newcommand{\ITA}{Instituto Tecnol{\'o}gico de Aeron{\'a}utica}
+\newcommand{\ITA}{\mbox{Instituto} \mbox{Tecnol{\'o}gico} de \mbox{Aeron{\'a}utica}}
 \ifthenelse{\equal{\DocumentType}{tg}}%
 {%
 \newcommand{\cipttext@course}{\@workcourse}%

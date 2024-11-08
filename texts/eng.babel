@@ -108,10 +108,10 @@
 	Course of \@workcourse%
 }
 \renewcommand{\latotitletext}{%
-	\expandafter\MakeUppercase\worklevel{} presented to the \ITA, in partial fulfillment of the requirements for the degree of \authortitle{} of Science in the Program of \@workcourse, Field \@workarea.%
+	\expandafter\MakeUppercase\worklevel{} presented to the \ITA, in partial fulfillment of the requirements for the degree of \expandafter\MakeUppercase\authortitle{} of Science in the Program of \@workcourse, Field \@workarea.%
 }
 \renewcommand{\strictotitletext}{%
-	\expandafter\MakeUppercase\worklevel{} presented to the Instituto Tecnol{\'o}gico de Aeron{\'a}utica, in partial fulfillment of the requirements for the degree of \authortitle{} of Engineering of the Professional Mester's Course in \@workcourse.%
+	\expandafter\MakeUppercase\worklevel{} presented to the Instituto Tecnol{\'o}gico de Aeron{\'a}utica, in partial fulfillment of the requirements for the degree of \expandafter\MakeUppercase\authortitle{} of Engineering of the Professional Mester's Course in \@workcourse.%
 }
 \renewcommand{\aprovedtext}{%
 	\expandafter\MakeUppercase\worklevel{} approved in its final version by the signatories below:%
