@@ -30,6 +30,9 @@
         \@makechapterhead{#2}%
         \@afterheading
     \fi
+	\ifdefined\NR@gettitle%
+		\NR@gettitle{#1}%
+	\fi
 }
 
 \def\@makechapterhead#1{%
